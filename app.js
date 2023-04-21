@@ -210,8 +210,8 @@
 //     alert("너무 어립니다.")
 // } 
 // else if(age >= 18 && age <= 50){
-//     //조건을 두개 이상 더 할땐 &&을 사용한다. (AND operator 연산자) 조건이 모두 true여야 함.
-//     //조건 중 하나만 적용하고 싶을땐 ||을 사용한다. (OR operator 연산자) 조건 중 하나만 true여도 됨.
+//     // 조건을 두개 이상 더 할땐 &&을 사용한다. (AND operator 연산자) 조건이 모두 true여야 함.
+//     // 조건 중 하나만 적용하고 싶을땐 ||을 사용한다. (OR operator 연산자) 조건 중 하나만 true여도 됨.
 //     alert("술 마실 수 있습니다.")
 // }
 // else if(age > 50 && age <= 80){
@@ -230,11 +230,104 @@
 
 
 
-const title = document.getElementById("title");
-//document는 html을 뜻함. 하나의 객체 형태를 가지고 있음.
-//document. 의 function(기능)으로 html에서 원하는 element를 가져올 수 있다.
-//getElementById를 통해 html에서 id="title"을 가져올 수 있음.
+// //Elements 찾는 법
+// const title = document.getElementById("title");
+// // document는 html을 뜻함. 하나의 객체 형태를 가지고 있음.
+// // document. 의 function(기능)으로 html에서 원하는 element를 가져올 수 있다.
+// // getElementById를 통해 html에서 id="title"을 가져올 수 있음.
+// // id="중복불가"
 
-title.innerText = "Got you"
-//html에 설정된 title내용을 변경.
+// title.innerText = "Got you"
+// // html에 설정된 title내용을 변경.
+// // array를 반환하는 function의 경우 사용불가
 
+// const hellos = document.getElementsByClassName("hello");
+// // 여러개(배열)을 가져오고 싶을때 쓰는 function
+
+// console.log(hellos);
+
+// const title = document.getElementsByTagName("h1");
+// // tag이름을 가진 element를 가져올 수 있는 function
+// // array(배열)로 반환.
+
+// console.log(title);
+
+// const title = document.querySelector(".hello h1");
+// // css에서 원하는 class안의 tag를 가져올때 사용하는 방법과 유사하다.
+// // 같은 className와 tagName을 가진 것이 여러개 있다면 첫번째것만 나온다.
+// // .getElementById처럼 id로도 검색이 가능한데, .querySelector("#hello"); 이런 식이다.
+// // 즉, 배열이 아닌 하나의 값만 반환.
+
+// const title = document.querySelector(".hello h1:first-child");
+
+// const title = document.querySelectorAll(".hello h1");
+// // .querySelectorAll이라는 function을 사용해야 배열로 나옴.
+
+
+
+//---------------------------------------------------------------------------------
+
+
+
+// // event의 요소에 관해서.
+const h1 = document.querySelector(".hello h1:first-child");
+
+console.dir(h1);
+// console.dir()했을때 나오는 무수한 요소 중, on~이 붙어있는 요소는 event이다. 
+// .addEventListener로 사용할땐 on떼고.
+
+function handleTitleClick(){
+    h1.style.color="yellow";
+};
+
+function handleMouseEnter(){
+    h1.innerText = "mouse is here";
+};
+
+function handleMouseLeave(){
+    h1.innerText = "mouse is gone";
+};
+
+function handleWindowResize(){
+    document.body.style.backgroundColor = "tomato";
+    //document.body는 html의 body 태그를 말함.
+};
+
+function handleWindowCopy(){
+    alert("copy paste");
+};
+
+function handleWindowOffline(){
+    alert("SOS");
+};
+
+function handleWindowOnline(){
+    alert("SAVE");
+};
+
+// .addEventListener는 유저가 어떤 동작을 수행했을때 그에따른 function 함수의 실행을 대신 해주는 기능.
+h1.addEventListener("click", handleTitleClick);
+// title.onclick = handleTitleClick;
+// 위의 경우 click 이벤트 시 만들어둔 function 함수가 뒤따라 수행되도록 함.
+
+h1.addEventListener("mouseenter", handleMouseEnter);
+// title.onmouseenter = handleMouseEnter;
+// mouseenter는 마우스를 원하는 위치에 올렸을때 event
+
+h1.addEventListener("mouseleave", handleMouseLeave);
+// title.onmouseleave = handleMouseLeave;
+// mouseleave는 마우스가 그 위치를 떠났을때 event
+
+// 위와 같이 두 가지 방법이 있으나,
+// .addEventListener는 나중에 .removeEventListener로 제거도 가능하다.
+
+window.addEventListener("resize", handleWindowResize);
+//window는 document와 같은 형식인데, 화면 전체를 말한다.
+//화면 사이즈를 바꿀때 발생하는 event
+
+window.addEventListener("copy", handleWindowCopy);
+//복사를 했을때 발생하는 event
+
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
+//wifi를 on, off 했을때 발생하는 event
