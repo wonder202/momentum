@@ -42,7 +42,7 @@
 
 //---------------------------------------------------------------------------------
 
-// //Object 설명
+// //Object(객체) 설명
 // const playerName = "bennie";
 // const playerPoints = 100;
 // const playerHandsome = true;
@@ -51,7 +51,7 @@
 // const player = ["bennie", 100, true, "Warrior"];
 
 // const player = { //object 생성
-//     //object 안에 선언되는 변수와 값
+//     //object(객체)안에 선언되는 properties(변수)와 값
 //     name: "bennie",
 //     points: 100,
 //     handsome: true,
@@ -173,23 +173,23 @@
 //---------------------------------------------------------------------------------
 
 // //conditionals(조건문) 1
-const age = parseInt(prompt("몇 살인가요?"));
-// function은 내부에서 외부로 실행된다.
-// 위 예제로 보면 prompt -> parseInt순으로 실행된다.
-// parseInt에 관해서는 메모장 10번 참고.
+// const age = parseInt(prompt("몇 살인가요?"));
+// // function은 내부에서 외부로 실행된다.
+// // 위 예제로 보면 prompt -> parseInt순으로 실행된다.
+// // parseInt에 관해서는 메모장 10번 참고.
 
 // const age = prompt("몇 살인가요?");
-// prompt는 더이상 사용하지않는데, 이유는 
-// (1)css적용이 안됨. 
-// (2)모든 브라우저에 적용되지않음.
-// (3)옛날 방식임.
+// // prompt는 더이상 사용하지않는데, 이유는 
+// // (1)css적용이 안됨. 
+// // (2)모든 브라우저에 적용되지않음.
+// // (3)옛날 방식임.
 
 // console.log(typeof age, typeof parseInt(age));
 // console.log(age);
 
 // console.log(isNaN(age));
-//isNaN()의 결과는 boolean으로써,
-//is not a number? 숫자가 아닌 것이냐?를 묻는 것. 즉, 숫자이면 false를. 문자면 true를 반환한다.
+// // isNaN()의 결과는 boolean으로써,
+// // is not a number? 숫자가 아닌 것이냐?를 묻는 것. 즉, 숫자이면 false를. 문자면 true를 반환한다.
 
 
 // //conditionals(조건문) 2 
@@ -203,23 +203,38 @@ const age = parseInt(prompt("몇 살인가요?"));
 
 // //conditionals(조건문) 3
 // //else if 사용법
-if(isNaN(age) || age < 0){
-    alert("숫자를 제대로 입력하세요.")
-} 
-else if(age < 18){
-    alert("너무 어립니다.")
-} 
-else if(age >= 18 && age <= 50){
-    //조건을 두개 이상 더 할땐 &&을 사용한다. (AND operator 연산자) 조건이 모두 true여야 함.
-    //조건 중 하나만 적용하고 싶을땐 ||을 사용한다. (OR operator 연산자) 조건 중 하나만 true여도 됨.
-    alert("술 마실 수 있습니다.")
-}
-else if(age > 50 && age <= 80){
-    alert("건강을 위해 자제하시는게 어떨까요?")
-}
-else if(age > 80 && age < 100){
-    alert("에휴 맘대로 하세요")
-}
-else if(age === 100){
-    alert("와 나이가 3자리네요?")
-}
+// if(isNaN(age) || age < 0){
+//     alert("숫자를 제대로 입력하세요.")
+// } 
+// else if(age < 18){
+//     alert("너무 어립니다.")
+// } 
+// else if(age >= 18 && age <= 50){
+//     //조건을 두개 이상 더 할땐 &&을 사용한다. (AND operator 연산자) 조건이 모두 true여야 함.
+//     //조건 중 하나만 적용하고 싶을땐 ||을 사용한다. (OR operator 연산자) 조건 중 하나만 true여도 됨.
+//     alert("술 마실 수 있습니다.")
+// }
+// else if(age > 50 && age <= 80){
+//     alert("건강을 위해 자제하시는게 어떨까요?")
+// }
+// else if(age > 80 && age < 100){
+//     alert("에휴 맘대로 하세요")
+// }
+// else if(age === 100){
+//     alert("와 나이가 3자리네요?")
+// }
+
+
+
+//---------------------------------------------------------------------------------
+
+
+
+const title = document.getElementById("title");
+//document는 html을 뜻함. 하나의 객체 형태를 가지고 있음.
+//document. 의 function(기능)으로 html에서 원하는 element를 가져올 수 있다.
+//getElementById를 통해 html에서 id="title"을 가져올 수 있음.
+
+title.innerText = "Got you"
+//html에 설정된 title내용을 변경.
+
