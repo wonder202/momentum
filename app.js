@@ -270,64 +270,110 @@
 
 
 // // event의 요소에 관해서.
+// const h1 = document.querySelector(".hello h1:first-child");
+
+// console.dir(h1);
+// // console.dir()했을때 나오는 무수한 요소 중, on~이 붙어있는 요소는 event이다. 
+// // .addEventListener로 사용할땐 on떼고.
+
+// function handleTitleClick(){
+//     const currentColor = h1.style.color; //현재 색깔
+//     let newColor; //새로운 색깔 = 고정적이지 않으므로 let
+//     if(currentColor !== "yellow"){ //일치하는지 확인은 ===
+//         newColor = "yellow"
+//     }
+//     else{
+//         newColor = "tomato"
+//     }
+//     h1.style.color = newColor;
+//     //if문 과정 후 조건에 따른 최종값을 현재 색 으로 할당.
+// };
+
+// function handleMouseEnter(){
+//     h1.innerText = "mouse is here";
+// };
+
+// function handleMouseLeave(){
+//     h1.innerText = "mouse is gone";
+// };
+
+// function handleWindowResize(){
+//     document.body.style.backgroundColor = "tomato";
+//     //document.body는 html의 body 태그를 말함.
+// };
+
+// function handleWindowCopy(){
+//     alert("copy paste");
+// };
+
+// function handleWindowOffline(){
+//     alert("SOS");
+// };
+
+// function handleWindowOnline(){
+//     alert("SAVE");
+// };
+
+// // .addEventListener는 유저가 어떤 동작을 수행했을때 그에따른 function 함수의 실행을 대신 해주는 기능.
+// h1.addEventListener("click", handleTitleClick);
+// // title.onclick = handleTitleClick;
+// // 위의 경우 click 이벤트 시 만들어둔 function 함수가 뒤따라 수행되도록 함.
+
+// h1.addEventListener("mouseenter", handleMouseEnter);
+// // title.onmouseenter = handleMouseEnter;
+// // mouseenter는 마우스를 원하는 위치에 올렸을때 event
+
+// h1.addEventListener("mouseleave", handleMouseLeave);
+// // title.onmouseleave = handleMouseLeave;
+// // mouseleave는 마우스가 그 위치를 떠났을때 event
+
+// // 위와 같이 두 가지 방법이 있으나,
+// // .addEventListener는 나중에 .removeEventListener로 제거도 가능하다.
+
+// window.addEventListener("resize", handleWindowResize);
+// //window는 document와 같은 형식인데, 화면 전체를 말한다.
+// //화면 사이즈를 바꿀때 발생하는 event
+
+// window.addEventListener("copy", handleWindowCopy);
+// //복사를 했을때 발생하는 event
+
+// window.addEventListener("offline", handleWindowOffline);
+// window.addEventListener("online", handleWindowOnline);
+// //wifi를 on, off 했을때 발생하는 event
+
+
+
+//---------------------------------------------------------------------------------
+
+
+
+// // css를 통한 style설정
 const h1 = document.querySelector(".hello h1:first-child");
 
-console.dir(h1);
-// console.dir()했을때 나오는 무수한 요소 중, on~이 붙어있는 요소는 event이다. 
-// .addEventListener로 사용할땐 on떼고.
-
+//click하면 (html을 통해) css의 className이 clicked인 함수가 실행.
+//h1은 초기값이 노란색으로 되어있음.
 function handleTitleClick(){
-    h1.style.color="yellow";
+    // const clickedClass = "clicked"
+    // string은 오타 등의 이유로 error를 잡기 어려우니 따로 변수에 저장 후 사용.
+    // if(h1.classList.contains(clickedClass)){
+    //     //className은 html의 class설정을 아예 교체시킴.
+    //     //classList는 html의 class설정에 특정class 추가, 제거가 가능.
+    //     //.contains()를 통해 포함을 확인.
+    //     h1.classList.remove(clickedClass);
+    //     //.remove()를 통해 특정 제거.
+    //     console.log(h1.className);
+    // }
+    // else{
+    //     h1.classList.add(clickedClass);
+    //     //.add()를 통해 class추가.
+    //     console.log(h1.className);
+    // }
+
+    //*-----위의 복잡한 if else문을 한줄로 만드는 법-----*
+    //toggle()은 contains, remove, add를 알아서 다 해준다ㅋ.ㅋ
+    //class를 한번만 넣어주면 되니까 굳이 따로 변수 저장할 필요도 없다.
+    h1.classList.toggle("clicked");
+
 };
 
-function handleMouseEnter(){
-    h1.innerText = "mouse is here";
-};
-
-function handleMouseLeave(){
-    h1.innerText = "mouse is gone";
-};
-
-function handleWindowResize(){
-    document.body.style.backgroundColor = "tomato";
-    //document.body는 html의 body 태그를 말함.
-};
-
-function handleWindowCopy(){
-    alert("copy paste");
-};
-
-function handleWindowOffline(){
-    alert("SOS");
-};
-
-function handleWindowOnline(){
-    alert("SAVE");
-};
-
-// .addEventListener는 유저가 어떤 동작을 수행했을때 그에따른 function 함수의 실행을 대신 해주는 기능.
 h1.addEventListener("click", handleTitleClick);
-// title.onclick = handleTitleClick;
-// 위의 경우 click 이벤트 시 만들어둔 function 함수가 뒤따라 수행되도록 함.
-
-h1.addEventListener("mouseenter", handleMouseEnter);
-// title.onmouseenter = handleMouseEnter;
-// mouseenter는 마우스를 원하는 위치에 올렸을때 event
-
-h1.addEventListener("mouseleave", handleMouseLeave);
-// title.onmouseleave = handleMouseLeave;
-// mouseleave는 마우스가 그 위치를 떠났을때 event
-
-// 위와 같이 두 가지 방법이 있으나,
-// .addEventListener는 나중에 .removeEventListener로 제거도 가능하다.
-
-window.addEventListener("resize", handleWindowResize);
-//window는 document와 같은 형식인데, 화면 전체를 말한다.
-//화면 사이즈를 바꿀때 발생하는 event
-
-window.addEventListener("copy", handleWindowCopy);
-//복사를 했을때 발생하는 event
-
-window.addEventListener("offline", handleWindowOffline);
-window.addEventListener("online", handleWindowOnline);
-//wifi를 on, off 했을때 발생하는 event
