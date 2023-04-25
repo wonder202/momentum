@@ -348,32 +348,84 @@
 
 
 // // css를 통한 style설정
-const h1 = document.querySelector(".hello h1:first-child");
+// const h1 = document.querySelector(".hello h1:first-child");
 
-//click하면 (html을 통해) css의 className이 clicked인 함수가 실행.
-//h1은 초기값이 노란색으로 되어있음.
-function handleTitleClick(){
-    // const clickedClass = "clicked"
-    // string은 오타 등의 이유로 error를 잡기 어려우니 따로 변수에 저장 후 사용.
-    // if(h1.classList.contains(clickedClass)){
-    //     //className은 html의 class설정을 아예 교체시킴.
-    //     //classList는 html의 class설정에 특정class 추가, 제거가 가능.
-    //     //.contains()를 통해 포함을 확인.
-    //     h1.classList.remove(clickedClass);
-    //     //.remove()를 통해 특정 제거.
-    //     console.log(h1.className);
-    // }
-    // else{
-    //     h1.classList.add(clickedClass);
-    //     //.add()를 통해 class추가.
-    //     console.log(h1.className);
-    // }
+// //click하면 (html을 통해) css의 className이 clicked인 함수가 실행.
+// //h1은 초기값이 노란색으로 되어있음.
+// function handleTitleClick(){
+//     // const clickedClass = "clicked"
+//     // string은 오타 등의 이유로 error를 잡기 어려우니 따로 변수에 저장 후 사용.
+//     // if(h1.classList.contains(clickedClass)){
+//     //     //className은 html의 class설정을 아예 교체시킴.
+//     //     //classList는 html의 class설정에 특정class 추가, 제거가 가능.
+//     //     //.contains()를 통해 포함을 확인.
+//     //     h1.classList.remove(clickedClass);
+//     //     //.remove()를 통해 특정 제거.
+//     //     console.log(h1.className);
+//     // }
+//     // else{
+//     //     h1.classList.add(clickedClass);
+//     //     //.add()를 통해 class추가.
+//     //     console.log(h1.className);
+//     // }
 
-    //*-----위의 복잡한 if else문을 한줄로 만드는 법-----*
-    //toggle()은 contains, remove, add를 알아서 다 해준다ㅋ.ㅋ
-    //class를 한번만 넣어주면 되니까 굳이 따로 변수 저장할 필요도 없다.
-    h1.classList.toggle("clicked");
+//     //*-----위의 복잡한 if else문을 한줄로 만드는 법-----*
+//     //toggle()은 contains, remove, add를 알아서 다 해준다ㅋ.ㅋ
+//     //class를 한번만 넣어주면 되니까 굳이 따로 변수 저장할 필요도 없다.
+//     h1.classList.toggle("clicked");
 
-};
+// };
 
-h1.addEventListener("click", handleTitleClick);
+// h1.addEventListener("click", handleTitleClick);
+
+
+
+
+
+//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+
+
+
+// //click event발생과 유효성테스트
+// const loginForm = document.getElementById("login-form"); //id
+// //이미 class를 가져와서 변수로 만들었기 때문에 document부터 할 필요 없이 바로 가져다 쓰면 됨.
+// //윗줄이 없으면,
+// // const loginInput = document.querySelector("#login-form input");
+// const loginInput = loginForm.querySelector("input"); //id안의 원하는 tag
+// const loginButton = loginForm.querySelector("button"); //id안의 원하는 tag
+
+// function handleLoginClick(){
+//     const username = loginInput.value
+//     console.log(username);
+//     if(username === ""){ //string
+//         alert("성함을 입력해주세요.");
+//     }
+//     else if(username.length > 15){
+//         alert("이름 너무 길어여")
+//     }
+// }
+
+// loginButton.addEventListener("click", handleLoginClick);
+
+// //submit(데이터전송) 감지와 브라우저기능 해제
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const link = document.querySelector("a"); 
+
+function handleLoginSubmit(event){ //event object정보 공간 할당을 위해 (event)를 넣어줌.
+    event.preventDefault(); //submit 후 자동으로 새로고침 되는 걸 해제.
+    // const username = loginInput.value
+    // console.log(event); //발생한 event에 대한 정보(object형태)를 가지고 있음.
+    console.log(loginInput.value);
+}
+
+function handleLinkClick(event){
+    event.preventDefault(); //link click시 자동으로 이동되는 걸 해제.
+    console.dir(event); //alert보다 위에 와야 정보가 뜸!
+}
+
+//function을 호출할때, 자동으로 event object를 첫번째 argument(실제값)으로 넘겨준다.
+loginForm.addEventListener("submit", handleLoginSubmit);
+link.addEventListener("click", handleLinkClick);
