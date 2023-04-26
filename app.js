@@ -412,14 +412,26 @@
 // //submit(데이터전송) 감지와 브라우저기능 해제
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const link = document.querySelector("a"); 
+const link = document.querySelector("a");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden" //class가 아닌 string자체를 가져올뿐인가..?
+
+//로그인 정보 전송 시
 function handleLoginSubmit(event){ //event object정보 공간 할당을 위해 (event)를 넣어줌.
     event.preventDefault(); //submit 후 자동으로 새로고침 되는 걸 해제.
-    // const username = loginInput.value
+    const username = loginInput.value
     // console.log(event); //발생한 event에 대한 정보(object형태)를 가지고 있음.
-    console.log(loginInput.value);
+    // console.log(loginInput.value);
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    console.log(username);
+    // greeting.innerText = "Hello, " + username;
+    //위와 같은 결과, 다른 함수
+    greeting.innerText = `Hello, ${username}`
+    greeting.classList.remove(HIDDEN_CLASSNAME)
 }
+
+
 
 function handleLinkClick(event){
     event.preventDefault(); //link click시 자동으로 이동되는 걸 해제.
