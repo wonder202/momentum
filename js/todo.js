@@ -33,8 +33,8 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newToDo = todoInput.value; //변수값을 복사
     todoInput.value = "";
-    todos.push(newToDo); //newToDo를 배열로 만들어주기
-    createToDo(newToDo); //newToDo를 화면에 그려주기
+    todos.push(newToDo); //newToDo를 todos변수에 저장.
+    createToDo(newToDo); //newToDo를 화면에 그려주기.
     saveToDos(); //저장하기
 }
 todoForm.addEventListener("submit", handleToDoSubmit);
@@ -52,7 +52,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 // if(savedToDos !== null){
 if(savedToDos){ //localStorage에 목록이 있을 경우.
     const parsedToDos = JSON.parse(savedToDos); //문자열로 저장시킨 것을 다시 배열로 변환하여 가져오기.
-    todos = parsedToDos;
+    todos = parsedToDos; //기존에 저장된 목록위에 덮어쓰는게 아니라, 추가시킴.
+
     // parsedToDos.forEach(sayHello); //parsedToDos 배열안의 item 각각에게 function 적용.
     // 위에 만들어준 sayHello와 같은 function 구문을 따로 만들 필요없이 아래와 같이 작성가능. 같은 것임.
     // arrow function이라고 함.
