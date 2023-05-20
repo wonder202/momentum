@@ -1,8 +1,7 @@
 // //submit(데이터전송) 감지와 브라우저기능 해제
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
-const link = document.querySelector("a");
-const greeting = document.querySelector("#greeting");
+const loginForm     = document.querySelector("#login-form");
+const loginInput    = document.querySelector("#login-form input");
+const greeting      = document.querySelector("#greeting");
 
 //반복해서 입력하는 string은 오타가 날 수 있으므로, 변수로 저장해준다.
 const HIDDEN_CLASSNAME = "hidden"
@@ -32,7 +31,7 @@ function paintGreetings(myName){
     // const myName = localStorage.getItem(USERNAME_KEY); //new
     // greeting.innerText = "Hello, " + myName;
     // 위와 같은 결과, 다른 함수
-    greeting.innerText = `Hello, ${myName}`;
+    greeting.innerText = `Nice to meet you, ${myName}`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

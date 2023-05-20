@@ -8,7 +8,7 @@ function onGeoOK(position){ //js의 위치정보 제공을 위한 공간(positio
         const city = document.querySelector("#weather span:first-child");
         const weather = document.querySelector("#weather span:nth-child(2)");
         const temp = document.querySelector("#weather span:last-child");
-        city.innerText = "You're in " + data.name;
+        city.innerText = data.name;
         weather.innerText = "It's " + data.weather[0].main;
         temp.innerText = Math.floor(data.main.temp) + "°C";
     });

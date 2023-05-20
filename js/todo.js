@@ -1,8 +1,8 @@
-const todoForm = document.getElementById("todo-form"); //아래와 같음
-const todoList = document.querySelector("#todo-list"); //위와 같음
+const todoForm  = document.getElementById("todo-form"); //아래와 같음
+const todoList  = document.querySelector("#todo-list"); //위와 같음
 const todoInput = todoForm.querySelector("input");
 const TODOS_KEY = "todos"
-let todos = []; //변경 가능한 변수.최종 array
+let todos       = []; //변경 가능한 변수.최종 array
 
 function saveToDos(){
     localStorage.setItem(TODOS_KEY, JSON.stringify(todos)); //문자열로 저장.

@@ -41,8 +41,8 @@ const quotes  = [
     },
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const authur = document.querySelector("#quote span:last-child");
+const quote     = document.querySelector("#quote span:first-child");
+const authur    = document.querySelector("#quote span:last-child");
 
 const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 //배열 길이만큼의 숫자를 랜덤 숫자에 곱해서 소수점 내림 후, 나오게함.
