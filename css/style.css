@@ -1,27 +1,36 @@
 h2, h1, form, ul, #quote, #weather, #login-form input {
     text-align: center;
     color: white;
+    text-shadow: 0px 0px 3px black;
+    /* border: 1px solid #cccccc; */
+}
+p{
+    margin-bottom: 0;
 }
 h2 {
-    font: 300 12rem/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font: 300 25vh/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1, p {
+    /* border: 1px solid #cccccc; */
     transition:color 0.5s ease-in-out;
-    font: 4rem/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font: 10vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+}
+#quote p {
+    margin: 0;
+    font: 3vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 ul{
-    border: 1px solid #cccccc;
     display: table;
     margin-left: auto;
     margin-right: auto;
 }
 #login-form input {
-    width: 30rem;
+    width: 35vmax;
     border: 0;
     background: transparent;
     border-bottom: 3px solid #ffff;
-    /* caret-color: #ffff; */
-    font-size: 3rem;
+    font-size: 8vmin;
+    margin-bottom: 7vmin;
 }
 #login-form input:focus {
     outline: none;
@@ -33,14 +42,25 @@ img {
     position:absolute;
     width:100%;
     height:100%;
-    left: 0px;
-    top: 0px;
-    right:0px;
-    bottom:0px;
+    left: 0vmax;
+    top: 0vmax;
+    right:0vmax;
+    bottom:0vmax;
     z-index: -1;
     opacity:90%;
+}
+.weatherIcon{
+    font-size: 50px;
 }
 #weather span {
     display: block;
     text-align: right;
+    font: 300 2.5vh 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+}
+img {
+    font-size: 1rem;
+}
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }

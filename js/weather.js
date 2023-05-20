@@ -7,11 +7,16 @@ function onGeoOK(position){ //js의 위치정보 제공을 위한 공간(positio
     fetch(url).then(response => response.json()).then(data => {
         const city = document.querySelector("#weather span:first-child");
         const weather = document.querySelector("#weather span:nth-child(2)");
-        const temp = document.querySelector("#weather span:last-child");
+        const temp = document.querySelector("#weather span:nth-child(3)");
+        const icon = document.querySelector('.weatherIcon');
+        const iconnum = data.weather[0].icon;
+        icon.src = `icon/${iconnum}.png`;
+       
         city.innerText = data.name;
-        weather.innerText = "It's " + data.weather[0].main;
+        weather.innerText = data.weather[0].main;
         temp.innerText = Math.floor(data.main.temp) + "°C";
     });
+    console.log(url)
     //fetch() //js가 대신 원격으로 함수를 호출함으로써 단계를 줄이는 효율적인 방법.
     //fetch()로 응답을 받고 나면 .then()으로 response(json형식)를 받는다.
     //그 다음, .then()으로 받은 데이터를 보여준다.
