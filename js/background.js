@@ -10,8 +10,11 @@ const chosenImage = images[Math.floor(Math.random() * images.length)];
 const BGImage = document.createElement("img");
 //새로운 태그를 가진 요소를 만드는 function
 
+const background = document.querySelector("#back");
+//css에서 img태그 겹침 방지 id부여.
+
 BGImage.src = `img/${chosenImage}`;
 //이미지 출처(위치) 지정.
 
-document.body.appendChild(BGImage)
+background.appendChild(BGImage)
 //.appendChild()는 html body안에 js에서 만들어둔 요소를 추가해주는 function
