@@ -26,13 +26,26 @@ function createToDo(todo){
     const span = document.createElement("span");
     span.innerText = todo.text; //obj전체가 아닌 text만 그려지도록함.
 
+
     const button = document.createElement("button");
+    const check = document.createElement("input");
+    check.type = "checkbox"
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
 
     li.appendChild(span); // li안에 span을 자식요소로 넣음.
+    li.appendChild(check);
     li.appendChild(button);
     todoList.appendChild(li);
+
+    check.addEventListener("change", () => {
+        if(check.checked === true){
+            span.style.textDecoration = "line-through";
+        } 
+        else {
+            span.style.textDecoration = "";
+        }
+    })
 }
 
 function handleToDoSubmit(event){
