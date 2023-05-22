@@ -33,8 +33,8 @@ function createToDo(todo){
     button.innerText = "❌";
     button.addEventListener("click", deleteToDo);
 
-    li.appendChild(span); // li안에 span을 자식요소로 넣음.
     li.appendChild(check);
+    li.appendChild(span); // li안에 span을 자식요소로 넣음.
     li.appendChild(button);
     todoList.appendChild(li);
 

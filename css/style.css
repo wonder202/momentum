@@ -1,14 +1,14 @@
 h2, h1, form, ul, #quote, #weather, #login-form input, #todo-form input {
     text-align  : center;
     color       : white;
-    text-shadow : 0px 0px 3px black;
+    text-shadow : 0px 0px 4px black;
     /* border: 1px solid #ece7e7; */
 }
 p{
     margin-bottom: 0;
 }
 h2 {
-    font: 300 25vh/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font: 200 25vh/0 'Times New Roman', Times, serif;
     margin-top: 5vmin;
 }
 h3 {
@@ -20,13 +20,29 @@ h1, p {
     font        : 10vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 #quote p {
+    opacity : 75%;
     margin  : 0;
-    font    : 3vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
-}
+    font    : 3vmin Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
 ul{
-    display     : table;
-    margin-left : auto;
-    margin-right: auto;
+    width   : 60vmax;
+    height  : 12vmin;
+    display : table;
+    margin  : 1rem auto 0 auto;
+}
+button {
+    background  :transparent;
+    border      : 0;
+    text-shadow : 0px 0px 2px black;
+}
+#todo-list li {
+    text-align  : justify;
+    display     : inline;
+    margin-right: 1rem;
+    font        : 2.5vmin Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+input[type=checkbox] {
+    transform   : scale(1.5);
+    margin-right: 0.5rem;
 }
 #login-form input, #todo-form input {
     width        : 35vmax;
@@ -34,7 +50,7 @@ ul{
     background   : transparent;
     border-bottom: 3px solid #ffff;
     font-size    : 8vmin;
-    margin-bottom: 7vmin;
+    margin-bottom: 3vmin;
 }
 #login-form input:focus, #todo-form input:focus {
     outline: none;
