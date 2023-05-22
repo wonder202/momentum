@@ -5,15 +5,17 @@ function onGeoOK(position){ //js의 위치정보 제공을 위한 공간(positio
     const lon = position.coords.longitude; //경도
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     fetch(url).then(response => response.json()).then(data => {
-        const city = document.querySelector("#weather span:first-child");
-        const weather = document.querySelector("#weather span:nth-child(2)");
+        const city = document.querySelector("#weather h5");
         const temp = document.querySelector("#weather span:nth-child(3)");
-        const icon = document.querySelector('.weatherIcon');
+        const weathericon = document.querySelector('.weatherIcon');
         const iconnum = data.weather[0].icon;
-        icon.src = `icon/${iconnum}.png`;
+        // const iconURL = `http://openweathermap.org/img/wn/${iconnum}@2x.png`;
+        // 기존 오픈웨더맵에서 받아올 수 있는 아이콘이 있으나, 새 아이콘으로 대체
+        const iconURL = `https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${iconnum}.png`;
+        weathericon.setAttribute('src', iconURL);
+
        
         city.innerText = data.name;
-        weather.innerText = data.weather[0].main;
         temp.innerText = Math.floor(data.main.temp) + "°C";
     });
     console.log(url)
