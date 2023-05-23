@@ -8,11 +8,12 @@ p{
     margin-bottom: 0;
 }
 h2 {
-    font      : 200 25vh/0 'Times New Roman', Times, serif;
+    font      : 200 25vmin/0 'Times New Roman', Times, serif;
     margin-top: 5vmin;
+    margin-bottom: 18vmin;
 }
 h3 {
-    font: 400 5vh/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font: 400 5vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1, p {
     word-break  : keep-all;
