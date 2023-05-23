@@ -6,7 +6,7 @@ function onGeoOK(position){ //js의 위치정보 제공을 위한 공간(positio
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     fetch(url).then(response => response.json()).then(data => {
         const city = document.querySelector("#weather h5");
-        const temp = document.querySelector("#weather span:nth-child(3)");
+        const temp = document.querySelector("#weather span:nth-child(4)");
         const weathericon = document.querySelector('.weatherIcon');
         const iconnum = data.weather[0].icon;
         // const iconURL = `http://openweathermap.org/img/wn/${iconnum}@2x.png`;
@@ -14,7 +14,6 @@ function onGeoOK(position){ //js의 위치정보 제공을 위한 공간(positio
         const iconURL = `https://raw.githubusercontent.com/yuvraaaj/openweathermap-api-icons/master/icons/${iconnum}.png`;
         weathericon.setAttribute('src', iconURL);
 
-       
         city.innerText = data.name;
         temp.innerText = Math.floor(data.main.temp) + "°C";
     });

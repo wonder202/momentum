@@ -10,9 +10,12 @@
     <body>
         <div id="back"></div> <!-- css에서 img태그 겹침 방지 id부여. -->
         <div id="weather">
-            <span>
-                <img class="weatherIcon" />
-            </span><br>
+            <span class="hidden">
+                <button id="log-out" >
+                    Log Out
+                </button>
+            </span>
+            <img class="weatherIcon" /><br>
             <span></span>
             <h5></h5>
         </div>
@@ -22,7 +25,7 @@
             <input required maxlength="10" type="text" />
         </form>
         <h1 id="greeting" class="hidden"></h1>
-        <form id="todo-form">
+        <form id="todo-form" class="hidden">
             <h3>What do you have TODO today?</h3>
             <input type="text" required maxlength="10" />
             <!-- required는 필수적으로 입력하는 항목 -->
@@ -32,11 +35,10 @@
             <p></p>
             <p></p>
         </div>
-        
         <script src="js/greetings.js"></script>
         <script src="js/clock.js"></script>
         <script src="js/background.js"></script>
-        <script src="js/todo.js"></script>
+        <!-- <script src="js/todo.js"></script> -->
         <script src="js/weather.js"></script>
         <!-- <script>가 있기때문에 js를 통한 html변경이 가능한 것. -->
         <!-- 이걸 통해 html과 js간의 소통이 가능하게 한다. scipt는 body 맨 아래 위치. -->

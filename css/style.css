@@ -8,26 +8,24 @@ p{
     margin-bottom: 0;
 }
 h2 {
-    font: 200 25vh/0 'Times New Roman', Times, serif;
+    font      : 200 25vh/0 'Times New Roman', Times, serif;
     margin-top: 5vmin;
 }
 h3 {
     font: 400 5vh/0 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 h1, p {
-    /* border: 1px solid #cccccc; */
     transition  :color 0.5s ease-in-out;
-    font        : 10vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font        : 9vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 #quote p {
     opacity : 75%;
     margin  : 0;
-    font    : 3vmin Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+    font    : 3vmin Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 ul{
-    width   : 60vmax;
-    height  : 12vmin;
     display : table;
-    margin  : 1rem auto 0 auto;
+    margin  : 1vmin auto 0 auto;
 }
 button {
     background  :transparent;
@@ -36,21 +34,22 @@ button {
     text-shadow : 0px 0px 2px black;
 }
 #todo-list li {
-    text-align  : justify;
+    white-space : pre;
     display     : inline;
-    margin-right: 1rem;
-    font        : 2.5vmin Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin      : 0 2vmin 0 0;
+    font        : 600 2vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 input[type=checkbox] {
     transform   : scale(1.5);
-    margin-right: 0.5rem;
+    margin-right: 0.8vw;
 }
 #login-form input, #todo-form input {
     width        : 35vmax;
+    height       : 10vmin;
     border       : 0;
     background   : transparent;
     border-bottom: 3px solid #ffff;
-    font-size    : 8vmin;
+    font-size    : 5vmin;
     margin-bottom: 3vmin;
 }
 #login-form input:focus, #todo-form input:focus {
@@ -81,11 +80,19 @@ input[type=checkbox] {
     text-align  : right;
     font        : 300 2.5vh 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
-#weather span:nth-child(3) {
+#weather span:nth-child(4) {
     font        : 4vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
+#log-out {
+    opacity     : 70%;
+    display     : block;
+    float       : left;
+    color       : white;
+    text-shadow : 0px 0px 4px black;
+    font        : 600 2.3vh Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+}
 h5 {
-    margin: 0;
+    margin     : 0;
     font-weight: 100;
 }
 body {
