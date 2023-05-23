@@ -99,7 +99,6 @@ function paintGreetings(myName){
     entireQuote.classList.remove(HIDDEN_CLASSNAME);
     todoForm.classList.remove(HIDDEN_CLASSNAME);
     logoutSpan.classList.remove(HIDDEN_CLASSNAME);
-    
 }
 
 // //function을 호출할때, 자동으로 event object를 첫번째 argument(실제값)으로 넘겨준다.
@@ -178,6 +177,11 @@ function handleToDoSubmit(event){
         text : newToDo,
         id   : Date.now(),
     } //item을 특정하기위해 object형식으로 id를 부여.
+    
+    console.log(todos.length)
+    if(todos.length >= 5){
+        return alert("리스트는 5개까지만 등록 가능합니다.");
+    }
 
     todos.push(newToDoObj); //newToDoObj를 todos변수에 저장.
     createToDo(newToDoObj); //newToDoObj를 화면에 그려주기.

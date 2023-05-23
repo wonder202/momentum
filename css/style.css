@@ -37,7 +37,7 @@ button {
     white-space : pre;
     display     : inline;
     margin      : 0 2vmin 0 0;
-    font        : 600 2vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+    font        : 600 2.5vmin 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
 }
 input[type=checkbox] {
     transform   : scale(1.5);
