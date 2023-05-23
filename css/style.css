@@ -43,7 +43,9 @@ button {
 }
 input[type=checkbox] {
     transform   : scale(1.5);
-    margin-right: 0.8vw;
+}
+#todo-list span{
+    margin-left: 5px;
 }
 #login-form input, #todo-form input {
     width        : 35vmax;
